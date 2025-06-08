@@ -7,7 +7,12 @@ const { v4: uuidv4 } = require('uuid');
 
 // Initialize Express app
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT =  3000;
+
+// Root route
+app.get('/', (req, res) => {
+  res.send('Hello World.');
+});
 
 // Middleware setup
 app.use(bodyParser.json());
@@ -40,10 +45,7 @@ let products = [
   }
 ];
 
-// Root route
-app.get('/', (req, res) => {
-  res.send('Welcome to the Product API! Go to /api/products to see all products.');
-});
+
 
 // TODO: Implement the following routes:
 // GET /api/products - Get all products
